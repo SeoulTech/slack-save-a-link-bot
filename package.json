@@ -1,0 +1,23 @@
+{
+  "name": "slack-save-a-link-bot",
+  "version": "0.0.0",
+  "description": "Slack bot to save links -----------------------",
+  "main": "index.js",
+  "devDependencies": {
+    "jasmine-node": "^1.14.5"
+  },
+  "scripts": {
+    "test": "node ./node_modules/jasmine-node/bin/jasmine-node spec/",
+    "postinstall": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SeoulTech/slack-save-a-link-bot"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SeoulTech/slack-save-a-link-bot/issues"
+  },
+  "homepage": "https://github.com/SeoulTech/slack-save-a-link-bot"
+}
