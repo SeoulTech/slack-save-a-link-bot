@@ -19,7 +19,7 @@ ext {
 
 sourceSets {
     test {
-        scala { srcDir 'spec' }
+        scala { srcDir '.' }
     }
 }
 
