@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#Runs 'acceptance test' - ckecks weather the given impl URL conforms the API spec
+
+#TODO(alex): check if node\npm availabe, fail gracefully if not 
+
+if [[ ! -d 'node_modules' ]]; then
+  echo "Installing dependencies though NPM"
+  npm install
+fi
+
+echo "Runing tests"
+npm test "$@"
