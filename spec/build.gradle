@@ -23,6 +23,12 @@ sourceSets {
     }
 }
 
+task spec(dependsOn: ['testClasses'], type: JavaExec) {
+  main = 'org.scalatest.tools.Runner'
+  args = ['-R', 'build/classes/test', '-o']
+  classpath = sourceSets.test.runtimeClasspath
+}
+
 dependencies {
     compile "org.scala-lang:scala-library:$scalaBinaryVersion.4"
     testCompile "org.scalatest:scalatest_$scalaBinaryVersion:2.2.1"

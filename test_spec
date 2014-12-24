@@ -2,6 +2,6 @@
 
 cd spec
 
-./gradlew test
+./gradlew spec
 
 cd -
