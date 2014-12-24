@@ -4,10 +4,20 @@
 
 #TODO(alex): check if node\npm availabe, fail gracefully if not 
 
+cd ./spec
+
 if [[ ! -d 'node_modules' ]]; then
   echo "Installing dependencies though NPM"
   npm install
 fi
 
+if [[ "$#" -ne 1 ]]; then
+  url="http://localhost:8080"
+else
+  url="$1"
+fi
+
 echo "Runing tests"
 npm test "$@"
+
+cd -
