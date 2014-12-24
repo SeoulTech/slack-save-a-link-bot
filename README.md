@@ -16,7 +16,9 @@ The API has two end-points:
    - POST /api/v1/links will save trimmed content of "text"-"trigger_word" fields from the payload
  - */api/v1/dump*
    - and request here gets dumped to server logs with all payloads, fields, etc.
-All API responces should be a well-formatted JSON object with at least one field "text", wich will be represented to user by Slack. 
+
+All API responces should be a well-formatted JSON object with at least one field "text", wich will be represented to user by Slack.
+
 Simple authorization on-write is done by checking the "token" field in request payload, wich should match the one from Slack OutgoingWebhooks integrations page
 
 **TODO:**
