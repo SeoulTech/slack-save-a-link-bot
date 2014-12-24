@@ -2,7 +2,7 @@
 
 #Runs 'acceptance test' - ckecks weather the given impl URL conforms the API spec
 
-#TODO(alex): check if node\npm availabe, fail gracefully if not 
+#TODO(alex): check if node\npm availabe, fail gracefully if not
 
 cd ./spec
 
@@ -12,12 +12,12 @@ if [[ ! -d 'node_modules' ]]; then
 fi
 
 if [[ "$#" -ne 1 ]]; then
-  url="http://localhost:8080"
+  export SERVER_URL="http://localhost:8080"
 else
-  url="$1"
+  export SERVER_URL="$1"
 fi
 
 echo "Runing tests"
-npm test "$@"
+npm test
 
 cd -
