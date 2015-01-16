@@ -26,6 +26,7 @@ Simple authorization on-write is done by checking the "token" field in request p
   - [ ] add acceptance test infrastructure AKA #1
   - [ ] automate spec verification (write the tests that can be re-used!)
   - [x] add Haskell impl
+  - [ ] add shared client-side app
   - [ ] add python impl
   - [ ] add C++ impl
   - [ ] add stress/performance test to compare impls
