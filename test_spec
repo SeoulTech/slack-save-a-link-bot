@@ -1,0 +1,14 @@
+#!/bin/bash
+
+
+if [[ "$#" -ne 1 ]]; then
+  url="http://localhost:8080"
+else
+  url="$1"
+fi
+
+cd spec
+echo "$url"
+./gradlew spec
+
+cd -

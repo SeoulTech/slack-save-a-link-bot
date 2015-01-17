@@ -1,0 +1,35 @@
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'scala'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.2.1'
+}
+
+version = '0.1'
+ext {
+    scalaBinaryVersion = '2.10'
+}
+
+
+sourceSets {
+    test {
+        scala { srcDir '.' }
+    }
+}
+
+task spec(dependsOn: ['testClasses'], type: JavaExec) {
+  main = 'org.scalatest.tools.Runner'
+  args = ['-R', 'build/classes/test', '-o']
+  classpath = sourceSets.test.runtimeClasspath
+}
+
+dependencies {
+    compile "org.scala-lang:scala-library:$scalaBinaryVersion.4"
+    testCompile "org.scalatest:scalatest_$scalaBinaryVersion:2.2.1"
+}
