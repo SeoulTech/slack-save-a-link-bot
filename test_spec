@@ -1,0 +1,23 @@
+#!/bin/bash
+
+#Runs 'acceptance test' - ckecks weather the given impl URL conforms the API spec
+
+#TODO(alex): check if node\npm availabe, fail gracefully if not
+
+cd ./spec
+
+if [[ ! -d 'node_modules' ]]; then
+  echo "Installing dependencies though NPM"
+  npm install
+fi
+
+if [[ "$#" -ne 1 ]]; then
+  export SERVER_URL="http://localhost:8080"
+else
+  export SERVER_URL="$1"
+fi
+
+echo "Runing tests"
+npm test
+
+cd -
